@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        rb = GetCompoent<Rigidbody>;
+        rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = movement * speed;
 
         rb.position = new Vector3(
-            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.mMax),
+            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
             0.0f,
             Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
         );
